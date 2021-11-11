@@ -14,7 +14,10 @@ if (!databaseUri) {
   console.log('DATABASE_URI not specified, falling back to localhost.');
 }
 const config = {
-  databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
+  databaseURI:
+    'mongodb://localhost:27017/mongodb+srv://frank:<password>@cluster0.wqpmr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+  //   databaseUri ||
+  // 'mongodb+srv://frank:frank@cluster0.wqpmr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'myAppId',
   masterKey: process.env.MASTER_KEY || 'dev', //Add your master key here. Keep it secret!
