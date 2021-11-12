@@ -15,7 +15,8 @@ if (!databaseUri) {
 }
 const config = {
   databaseURI:
-    'mongodb://localhost:27017/mongodb+srv://frank:<password>@cluster0.wqpmr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+    databaseUri ||
+    'mongodb+srv://Frank:frank@cluster0.nv9au.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
   //   databaseUri ||
   // 'mongodb+srv://frank:frank@cluster0.wqpmr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
@@ -32,7 +33,7 @@ const config = {
 // const dashboard = new ParseDashboard({
 //   apps: [
 //     {
-//       serverURL: 'http://localhost:1337/parse',
+//       serverURL: 'http://localhost:1337/parse',databaseUri || 'mongodb://localhost:27017/dev'
 //       appId: 'myAppId',
 //       masterKey: 'myMasterKey',
 //       appName: 'MyApp',
